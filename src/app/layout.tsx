@@ -4,16 +4,23 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/ui/navbar";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-plus-jakarta",
+});
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased", plusJakarta.className)}>
         <Navbar/>
         <Breadcrumbs />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

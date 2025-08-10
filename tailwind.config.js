@@ -9,11 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+       fontFamily: {
+        sans: ["var(--font-plus-jakarta)", "sans-serif"],
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
       },
     },
   },
-  plugins: [],
+  plugins: [ require('tailwind-scrollbar'),],
 };

@@ -8,8 +8,8 @@ export function Breadcrumbs() {
   const segments = pathname.split("/").filter(Boolean);
 
   return (
-    <div className="text-sm text-muted-foreground px-6 py-2">
-      <Link href="/" className="text-blue-500 hover:underline">
+    <div className="text-sm text-muted-foreground px-16 py-2">
+      <Link href="/" className="text-gray hover:underline">
         Home
       </Link>
       {segments.map((segment, index) => {
@@ -17,7 +17,7 @@ export function Breadcrumbs() {
         return (
           <span key={index}>
             {" / "}
-            <Link href={href} className="text-blue-500 hover:underline">
+            <Link href={href} className="text-gray hover:underline">
               {decodeURIComponent(segment)}
             </Link>
           </span>

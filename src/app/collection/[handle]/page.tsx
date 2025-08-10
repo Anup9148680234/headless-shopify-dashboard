@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/store/useCartStore";
 import { CartDrawer } from "@/components/ui/cart-drawer";
+import { ProductCard } from "@/components/ui/product-card";
 
 interface Product {
   id: string;
@@ -150,12 +151,14 @@ export default function CollectionPage({ params }: { params: { handle: string } 
               className="mt-4 w-full"
               onClick={() =>
                 addItem({
-                  id: product.id,
-                  title: product.title,
-                  variantId: product.id, // Replace with actual variant ID if needed
-                  price: product.price,
-                  quantity: 1,
-                })
+                id: product.id,
+                title: product.title,
+                variantId: selectedVariant.id || product.id,
+                variantTitle: selectedVariant.title || product.title,
+                price: parseFloat(selectedVariant.price) || parseFloat(product.price),
+                quantity: 1,
+                image: product.image,
+              })
               }
             >
               Add to Cart

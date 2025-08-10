@@ -7,8 +7,8 @@ export function Navbar() {
         <Link href="/" className="text-lg font-bold">
           🛍️ MyStore
         </Link>
-        <div className="space-x-4">
-          <Link href="/collection">Collection</Link>
+        <div className="space-x-12 ">
+          <Link href="/collection">All Collections</Link>
           <Link href="/cart">Cart</Link>
         </div>
       </div>
