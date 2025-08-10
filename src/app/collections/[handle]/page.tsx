@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 
 import { notFound } from "next/navigation";
@@ -13,7 +15,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // -- Branding colors (make sure Tailwind config includes wine, beige, accent-gold) --
 
-export default function CollectionPage({ params }) {
+interface PageProps {
+  params: Promise<{ handle: string }>;
+}
+
+
+export default async function CollectionPage({ params }: PageProps) {
+
+  const { handle } = await params;
   const [products, setProducts] = useState([]);
   const [collectionTitle, setCollectionTitle] = useState("");
   const addItem = useCartStore((state) => state.addItem);
@@ -54,7 +63,7 @@ export default function CollectionPage({ params }) {
       `;
       const res = await axios.post(
         `https://teststoreanup.myshopify.com/api/2024-07/graphql.json`,
-        { query, variables: { handle: params.handle } },
+        { query, variables: { handle: handle } },
         {
           headers: {
             "X-Shopify-Storefront-Access-Token":

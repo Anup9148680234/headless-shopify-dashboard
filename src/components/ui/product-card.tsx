@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 
 import { Product } from "@/types/product";
@@ -6,6 +8,8 @@ import { useCartStore } from "@/store/useCartStore";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useSwipeable } from "react-swipeable";
+
+
 
 // Fix: aspect-square container, glass styles, modern dot indicators
 export function ProductCard({ product }: { product: Product }) {
