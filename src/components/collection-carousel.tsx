@@ -88,7 +88,7 @@ export function CollectionCarousel({ title, handle }: CollectionCarouselProps) {
 
   return (
     <section className="px-6 mb-8">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+     
       <div className="overflow-x-auto whitespace-nowrap space-x-4 flex scrollbar-hide">
         {products.map((product) => (
           <div key={product.id} className="w-64">

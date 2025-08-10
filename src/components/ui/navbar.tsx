@@ -8,7 +8,7 @@ export function Navbar() {
           🛍️ MyStore
         </Link>
         <div className="space-x-12 ">
-          <Link href="/collection">All Collections</Link>
+          <Link href="/collections">All Collections</Link>
           <Link href="/cart">Cart</Link>
         </div>
       </div>

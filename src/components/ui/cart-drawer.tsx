@@ -31,7 +31,7 @@ export function CartDrawer() {
     <>
       {/* Cart Icon Button */}
       <button
-        className="fixed top-4 right-4 z-50 bg-white rounded-full p-2 shadow-lg dark:bg-zinc-900"
+        className="fixed top-16 right-4 z-50 bg-white rounded-full p-2 shadow-lg dark:bg-zinc-900"
         onClick={() => setOpen(true)}
         aria-label="Open cart"
       >
