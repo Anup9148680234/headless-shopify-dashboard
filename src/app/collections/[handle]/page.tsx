@@ -20,9 +20,8 @@ interface PageProps {
 }
 
 
-export default async function CollectionPage({ params }: PageProps) {
+export default function CollectionPage({ params }: PageProps) {
 
-  const { handle } = await params;
   const [products, setProducts] = useState([]);
   const [collectionTitle, setCollectionTitle] = useState("");
   const addItem = useCartStore((state) => state.addItem);
@@ -63,7 +62,7 @@ export default async function CollectionPage({ params }: PageProps) {
       `;
       const res = await axios.post(
         `https://teststoreanup.myshopify.com/api/2024-07/graphql.json`,
-        { query, variables: { handle: handle } },
+        { query, variables: { handle: (await params).handle } },
         {
           headers: {
             "X-Shopify-Storefront-Access-Token":
