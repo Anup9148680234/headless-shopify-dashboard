@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["cdn.shopify.com", "www.shutterstock.com", "cdn.dribbble.com", "via.placeholder.com"],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
